@@ -18,6 +18,17 @@ namespace SayHello.Web.Migrations
                 {
                     table.PrimaryKey("PK_Hellos", x => x.ISO639LanguageId);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Hellos",
+                columns: new[] { "ISO639LanguageId", "HelloText", "LanguageName" },
+                values: new object[,]
+                {
+                    { "eng", "Hello", "English" },
+                    { "spa", "Hola", "Spanish" },
+                    { "jpn", "こんにちは", "Japanese" },
+                    { "ara", "مرحبا", "Arabic" }
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

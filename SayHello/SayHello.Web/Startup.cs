@@ -34,6 +34,7 @@ namespace SayHello.Web
 
             services.AddDbContext<SayHelloDatabaseContext>(options => options.UseSqlServer(connection));
             services.AddTransient<ILanguageCodeValidator, LanguageCodeValidator>();
+            services.AddTransient<IHelloRepository, HelloRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

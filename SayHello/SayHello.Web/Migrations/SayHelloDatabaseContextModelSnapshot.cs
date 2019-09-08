@@ -30,6 +30,32 @@ namespace SayHello.Web.Migrations
                     b.HasKey("ISO639LanguageId");
 
                     b.ToTable("Hellos");
+
+                    b.HasData(
+                        new
+                        {
+                            ISO639LanguageId = "eng",
+                            HelloText = "Hello",
+                            LanguageName = "English"
+                        },
+                        new
+                        {
+                            ISO639LanguageId = "spa",
+                            HelloText = "Hola",
+                            LanguageName = "Spanish"
+                        },
+                        new
+                        {
+                            ISO639LanguageId = "jpn",
+                            HelloText = "こんにちは",
+                            LanguageName = "Japanese"
+                        },
+                        new
+                        {
+                            ISO639LanguageId = "ara",
+                            HelloText = "مرحبا",
+                            LanguageName = "Arabic"
+                        });
                 });
 #pragma warning restore 612, 618
         }
