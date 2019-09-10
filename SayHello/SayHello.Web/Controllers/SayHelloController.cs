@@ -17,14 +17,12 @@ namespace SayHello.Web.Controllers
         [Route("SayHello/{languageId}")]
         public IActionResult Index(string languageId)
         {
-            var isValid = languageCodeValidator.Validate(languageId);
+            var hello = hellosRepository.GetHello(languageId);
 
-            if (!isValid)
+            if (hello == null)
             {
                 return View("UserError", languageId);
             }
-
-            var hello = hellosRepository.GetHello(languageId);
 
             return View(nameof(Index), hello);
         }
