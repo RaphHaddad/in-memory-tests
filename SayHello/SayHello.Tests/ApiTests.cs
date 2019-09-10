@@ -22,5 +22,15 @@ namespace SayHello.Tests
 
             response.EnsureSuccessStatusCode();
         }
+
+        [Fact]
+        public async Task ShouldFailGracefully()
+        {
+            var client = this.factory.CreateClient();
+
+            var response = await client.GetAsync("/SayHello/invalid");
+
+            response.EnsureSuccessStatusCode();
+        }
     }
 }
