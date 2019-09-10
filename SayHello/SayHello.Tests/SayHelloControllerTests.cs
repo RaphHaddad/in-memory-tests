@@ -20,18 +20,6 @@ namespace SayHello.Tests
         }
 
         [Fact]
-        public void DoesValidateLanguageId()
-        {
-            var language = "eng";
-
-            controller.Index(language);
-
-            languageCodeValidator
-                .Received(1)
-                .Validate(language);
-        }
-
-        [Fact]
         public void DoesCallHellosRepositoryIfValid()
         {
             var language = "eng";
@@ -47,22 +35,6 @@ namespace SayHello.Tests
 
             hellosRepository
                 .Received(1)
-                .GetHello(language);
-        }
-
-        [Fact]
-        public void DoesNotCallHellosRepositoryIfValid()
-        {
-            var language = "eng";
-
-            languageCodeValidator
-                .Validate(Arg.Any<string>())
-                .Returns(false);
-
-            controller.Index(language);
-
-            hellosRepository
-                .DidNotReceive()
                 .GetHello(language);
         }
     }
