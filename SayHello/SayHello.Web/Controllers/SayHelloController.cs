@@ -26,7 +26,7 @@ namespace SayHello.Web.Controllers
 
             var hello = hellosRepository.GetHello(languageId);
 
-            return View(nameof(Index), hello.HelloText);
+            return View(nameof(Index), hello);
         }
     }
 }

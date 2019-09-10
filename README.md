@@ -1,6 +1,6 @@
 # README
 
-An application that demonstrates how to write different types of tests using ASP.NET core
+An application that demonstrates how to write different types of tests using ASP.NET core.
 
 ## Run The Site
 
