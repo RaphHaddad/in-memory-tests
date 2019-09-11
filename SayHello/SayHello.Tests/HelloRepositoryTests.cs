@@ -16,11 +16,9 @@ namespace SayHello.Tests
 
         public HelloRepositoryTests()
         {
-            const string connection = @"Server=(localdb)\mssqllocaldb;Database=SayHello.Tests;Trusted_Connection=True;ConnectRetryCount=0";
-
-            var dbContextOptions = new DbContextOptionsBuilder<SayHelloDatabaseContext>()
-                                            .UseSqlServer(connection)
+            var dbContextOptions = new DbContextOptionsBuilder<SayHelloDatabaseContext>().UseInMemoryDatabase("inmemory")
                                             .Options;
+
             dbContext = new SayHelloDatabaseContext(dbContextOptions);
         }
 
